@@ -1,0 +1,315 @@
+/* main => by eril tavares; */
+
+/* THEME */
+html.theme-dark{background-color: none;}
+
+/*ROOT*/
+html {height: 100%}
+body {height: calc(100%)}
+::-webkit-scrollbar {display: none}
+h1{font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;}
+h2{font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;}
+a:visited{color: #c33c79}a:hover{text-decoration: all;text-decoration-color: #c33c79}
+*{transition: color 1s,background-color 0.1s;}
+
+/* CONTENT */
+main {position: fixed;display: block;
+    background: azure;
+    left: 0px;top: 50px;
+    width: 100%;height: calc(100% - 50px /* msm valor do top */);
+    min-width: 100%;max-height: 100%;
+    margin: 0px;margin-left: 0px;padding: 0px;
+    overflow-x: hidden;
+}main iframe {width: 100%;height: 100%;margin: 0;background: none;color: inherit;border: none;display: block;
+    user-select: none;-webkit-user-select:none;
+}
+#mainContents {display: block;object-fit: contain;
+    width: 100%;height: 100%;
+    margin: 0;padding: 10px;
+    background: inherit;color: inherit;
+    border: none;user-select: none;
+    text-rendering: optimizeSpeed;
+    align-items: center;align-content: center;
+}
+
+
+/* HEADER */
+
+header#mainHeader {position: fixed;display: flex;z-index: 10;
+    justify-content: space-between;overflow: unset;
+    top: 0;left: 0;
+    width: 100%;height: 50px;
+    padding: 0px;margin: 0;
+    transition: 0s;
+    user-select: none;-webkit-user-select: none;
+   		background-color: #333;
+    	box-shadow: 0px 1px 1px black;
+}
+#menuIcon,#logo,#mainMenu,.menu
+{float: left;}
+
+#menuIcon {position: relative;display: inline-block;
+    width: 20px;height: 20px;
+    top: 0px;
+    margin: 15px 10px;
+    cursor: pointer;
+	}.bar1,.bar2,.bar3 {width: 100%;height: 3px;margin-top: 3px;
+    	background-color: silver;
+    	transition: 0.4s ease;
+    	/*text-align: center;*/
+	}
+	.close .bar1 {transform: rotate(45deg)translate(3px, 5px);margin-left: 2px;}
+	.close .bar2 {opacity: 0;margin-left: 1px;}
+	.close .bar3 {transform: rotate(-45deg) translate(3px, -5px);margin-left: 2px;}
+	#menuIcon:hover [class^="bar"] {background-color: #e17;
+}
+
+#logo {font-size: auto;margin: 0px;padding: 5px 25px;
+    color: silver;width: auto;
+    align-items: flex-start;
+    transition: 0.8s ease-in 2s;
+    flex-grow: 0;
+    /* anim */
+    animation: 4s logo ease-in-out 2s infinite alternate;
+	}@keyframes logo {0% {opacity:1;}100% {opacity:0.2;}}
+#logo a{text-decoration: none;color:unset;
+}
+#logo:hover {letter-spacing: 1.3pt;text-shadow: 0px 2px 1px slateblue;cursor: default;}
+#logo::first-letter{font-family: papyrus, "Comic Sans MS";font-weight: bolder;}
+
+#mainMenu {position: relative;flex-grow: 1;
+}
+#mainMenu .menu {display: inline-block;position: relative;white-space: nowrap;
+}
+#mainMenu .menu button {display: inline-block;
+    margin: 0px;padding: 0px 15px;
+    height: 50px;min-width: 100px;
+    border: none;outline: none;
+    background: #333;color: pink;
+    font-variant: small-caps;font-weight: bolder;font-size: smaller;
+    align-content: center;cursor: pointer;
+    white-space: nowrap;
+}
+#mainMenu .menu:hover button {background-color: #445;text-decoration: underline;text-decoration-color: violet;}
+#mainMenu .menu:active button {text-shadow: 0px 0px 2px #a00;text-decoration-color: red}
+
+.menu nav.submenu {position: absolute;display: block;z-index: -1;
+    top: calc(0% - 60px*3);left: 0px;width: 100%;transition: 0.4s ease-out 0.1s;
+   	background: #e17;overflow-x: hidden;
+}
+.menu:hover nav.submenu {top: 100%;box-shadow: 0px 0px 2px black;}
+.menu nav.submenu a {display: block;
+    padding: 15px;
+    text-align: center;
+    text-decoration: #333;
+    color: snow;
+}.menu nav.submenu a:hover {filter: drop-shadow(0px 2px black);text-shadow: 0px 1px 3px black;background: rgb(220, 50, 190);color: white;border: none;z-index: 1;transition: 0.3s;color: pink;}
+/*MENU OPENER */
+#mainMenu .menu input.Obtn {background-image: url(theme/caret-down.svg);background-size: contain;background-position: center;background-repeat: no-repeat;
+    position: absolute;display: none;right: 0;
+    background-color: #aaa;
+    height: 100%;width: 25%;
+    cursor: default;border: none;
+    transform: rotateX(180deg);
+}
+/* SOCIAL BAR */
+#social {display: inline-flex;align-items: center;z-index: 8;
+    height: 100%;width: auto;
+    float: right;
+    padding: 0px 2px;margin: 0px 5px;
+}
+#social a i.fab {font-size: 2.5em;transition: 0.4s;
+    display: inline-block;
+    width: 30px;margin: 0px 5px;
+    color: black
+}
+#social a:visited i {filter: invert(100%)}
+#social a:hover i.fab {transform: translateY(-2px);}
+#social a i.fab:active {transform: scale(0.8);}
+/* DARK MODE */
+#darkmode {display: inline-flex;position: absolute;align-items: center;
+    height: auto;
+    top: 100%;right: -90px;
+    margin: 5px 0px;padding: 1px 5px;
+    border-radius: 10px 0px 0px 10px;
+    opacity: 0.3;background-color: #222;
+    cursor: pointer;
+    transition: 0.4s ease-out;
+}
+#darkmode:hover {text-shadow: 0px 0px 3px white;opacity: 0.8;right: 0px;}
+#darkmode:hover img {transform: rotate(0deg);}
+
+#darkmode img {transition: 0.3s ease-in-out 0.3s;
+    width: 25px;height: auto;
+    filter: brightness(50%);transform: rotate(-90deg);
+}
+
+#darkmode span {padding: 0px 5px;
+    color: currentColor;
+}
+
+/* SIDE BAR */
+
+aside#mainSidebar {
+    position: fixed;z-index: 9;display: grid;
+    top: 50px;
+    width: 0;
+    height: 100%;
+    padding: 5px 0px;
+    margin: 0;
+    box-shadow: 1px 0px 5px black;
+    background: linear-gradient(to bottom, #e17, violet);
+    color: snow;
+    left: 0;
+    transition: 0.3s ease;
+    overflow-x: hidden;
+}
+
+
+/* BEYOND TOPNAV */
+
+.searchbar {position: sticky;top: 0;
+    display: inline-flex;
+    height: 30px;
+    width: 100%;
+}
+
+.searchTxt {
+    position: relative;
+    height: 20px;
+    margin: 5px 0px;
+    left: 0px;
+    width: 90%;
+    opacity: 0.5;
+    transition: 0.3s;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.searchTxt:hover {
+    opacity: 0.75;
+}
+
+.searchTxt:focus {
+    opacity: 1;
+    font-family: monospace;
+}
+
+.searchBtn {
+    position: absolute;
+    height: 20px;
+    margin: 5px 2.5%;
+    width: 5%;
+    cursor: pointer;
+    background: url(theme/search_ico.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-position: center;
+    opacity: 0.5;
+    transition: 0.1s;
+    animation: 1.5s lupa ease 1s alternate infinite;
+}
+
+.searchBtn:hover {
+    opacity: 1;
+}
+
+.searchTxt:focus ~ .searchBtn {
+    opacity: 0.8
+}
+
+.searchBtn:active {
+    transform: scale(1.25);
+    opacity: 1;
+}
+
+@keyframes lupa {
+    from{transform: rotateZ(30deg)translateY(-1.5px);}
+    to{transform: rotateZ(0deg)translateX(0px);}
+}
+
+#mainSidebar{grid-template-rows: 40px 125px 250px;grid-row-gap: 15px;}
+
+#mainSidebar div {
+    display: block;
+    position: relative;
+}
+
+#mainSidebar div.topsidebar{grid-row: 1;
+    
+}
+
+#mainSidebar  div.fLogo {grid-row: 2;
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+}
+
+#mainSidebar div.fLogo img {
+    border-radius: 30px 15px;
+    opacity: 90%;
+    width: 100%;
+    height: 100%;
+}
+
+#mainSidebar div.fText {display: block;position: absolute;z-index: 7;
+    bottom: 60px;background-color: inherit;
+    text-align: center;letter-spacing: 1px;
+    cursor: text;text-shadow: 0px 0.5px 3px black;
+    font-family: monospace;
+    text-overflow: clip;
+    overflow: hidden;
+    word-break:keep-all;
+    height: 75px;width: 100%;
+}
+
+#mainSidebar div.fContact {grid-row: 3;
+    font-size: 14pt;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    padding: 0px 10px;margin: 5px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+}
+
+#mainSidebar div.fContact span.links {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mainSidebar div.fContact span.links a {
+    /* box */
+    background-color: #240d49;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+    background-position: 95% center;
+    width: 100%;
+    margin: 10px 0px;padding: 4px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px slategray;
+    transition: 0.2s;
+    /*link*/
+    display: block;
+    text-decoration: none;
+    color: #F8F8FF;
+    text-align: center;
+    text-indent: 5%;
+}
+
+#mainSidebar div.fContact span.links a:hover {
+    background-color: #801977;
+    transform: scale(1.02);
+}
+
+#mainSidebar div.fContact span.links a:active {
+    background-color: slategray;
+    transition: 0s
+}
