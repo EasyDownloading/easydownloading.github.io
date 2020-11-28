@@ -2,6 +2,8 @@
 
 /* THEME */
 html.theme-dark{background-color: none;}
+* {box-sizing: border-box;}
+
 
 /*ROOT*/
 html {height: 100%}
@@ -31,6 +33,9 @@ main {position: fixed;display: block;
     text-rendering: optimizeSpeed;
     align-items: center;align-content: center;
 }
+
+#noIframe{text-align: center;font-size: 42pt;font-family: "Copperplate Light", "Copperplate Gothic Light", serif;
+        margin: auto; margin-top: 50%;color: black;}
 
 
 /* HEADER */
@@ -81,21 +86,23 @@ header#mainHeader {position: fixed;display: flex;z-index: 10;
 }
 #mainMenu .menu {display: inline-block;position: relative;white-space: nowrap;
 }
-#mainMenu .menu button {display: inline-block;
+#mainMenu .menu button,#mainMenu .menu a {display: flex;
     margin: 0px;padding: 0px 15px;
     height: 50px;min-width: 100px;
     border: none;outline: none;
-    background: #333;color: pink;
+    background: #373737;color: pink;
     font-variant: small-caps;font-weight: bolder;font-size: smaller;
-    align-content: center;cursor: pointer;
+    align-content: center;align-items: center;cursor: pointer;font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     white-space: nowrap;
+    text-decoration: none;
+    justify-content: center;align-items: center;
 }
-#mainMenu .menu:hover button {background-color: #445;text-decoration: underline;text-decoration-color: violet;}
-#mainMenu .menu:active button {text-shadow: 0px 0px 2px #a00;text-decoration-color: red}
+#mainMenu .menu:hover button,#mainMenu .menu:hover a {background-color: #445;text-decoration: underline;text-decoration-color: violet;}
+#mainMenu .menu:active button,#mainMenu .menu:active a {text-shadow: 0px 0px 2px #a00;}
 
-.menu nav.submenu {position: absolute;display: block;z-index: -1;
+.menu nav.submenu {position: absolute;display: block;z-index: -1;flex-direction: column;
     top: calc(0% - 60px*3);left: 0px;width: 100%;transition: 0.4s ease-out 0.1s;
-   	background: #e17;overflow-x: hidden;
+    justify-content: center;align-items: center;
 }
 .menu:hover nav.submenu {top: 100%;box-shadow: 0px 0px 2px black;}
 .menu nav.submenu a {display: block;
@@ -137,11 +144,13 @@ header#mainHeader {position: fixed;display: flex;z-index: 10;
     transition: 0.4s ease-out;
 }
 #darkmode:hover {text-shadow: 0px 0px 3px white;opacity: 0.8;right: 0px;}
-#darkmode:hover img {transform: rotate(0deg);}
+#darkmode:hover i {transform: rotate(0deg);}
 
-#darkmode img {transition: 0.3s ease-in-out 0.3s;
+#darkmode i {transition: 0.3s ease-in-out 0.3s;
     width: 25px;height: auto;
     filter: brightness(50%);transform: rotate(-90deg);
+    padding: 3px;font-size: 1.5rem;margin-right: 3px ;
+    color: #ff0;
 }
 
 #darkmode span {padding: 0px 5px;
@@ -313,3 +322,161 @@ aside#mainSidebar {
     background-color: slategray;
     transition: 0s
 }
+
+
+/* MEDIA QUERY */
+
+
+/* HEADER */
+
+@media only screen and (max-width: 800px) {
+
+    main{
+        height: calc(100% - 50px - 60px);
+    }
+
+    header#mainHeader {
+        height: 60px;
+        max-height: 100%;
+        align-items: center;
+        display: inline-flex;
+    }
+    #menuIcon {
+        float: left;
+        transition: 0.5s;
+    }
+    #logo {
+        display: inline-block;
+        text-align: center;
+        width: auto;
+        transition: 0.5s;
+    }
+    #mainMenu {
+        background-color: #333;
+        height: 60px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transition: 0.5s;
+        display: flex;
+        align-content: stretch;
+        justify-content: space-around;
+    }
+    #mainMenu .menu {
+        text-align: center;
+        display: block;
+        width: auto;
+    }
+    #mainMenu .menu button {
+        background: none;
+        height: 60px;
+        width: 100%
+    }
+    #mainMenu .menu.mdrop button {
+        padding-right: 40px;
+    }
+    #mainMenu .menu input.Obtn {
+        display: inline-block;
+        outline: none;
+    }
+    #mainMenu .menu input.Obtn:focus {
+        transform: rotateY(180deg);
+        transition: 0s;
+    }
+    .menu nav.submenu {
+        bottom: 100%;
+        top: unset;
+        opacity: 0;
+        left: 0px;
+        width: 100%;
+        visibility: hidden;
+        background: #e17;
+        transition: 0.3s linear 0s;
+    }
+    .menu input.Obtn:focus~nav.submenu {
+        visibility: visible;
+        opacity: 1;
+    }
+    .menu nav.submenu a {
+        padding: 15px;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: snow;
+        transition: 0.5s;
+    }
+    .menu nav.submenu a:hover {
+        filter: drop-shadow(0px 1px black)drop-shadow(0px -1px black);
+        background: #d4a;
+        color: azure;
+        border: none;
+        z-index: 1;
+        transition: .1s;
+    }
+    .menu:hover nav.submenu {
+        top: unset;
+        bottom: 100%;
+    }
+    #darkmode {}
+    #social {
+        transition: 0.5s;
+    }
+
+    /* SIDEBAR */
+    
+    @media only screen and (max-width: 800px) {
+        aside#mainSidebar {
+            /* total + 12 de padding lateral + 4 do shadow blur    */
+            top: 60px;
+            width: 0;
+            z-index: 2;
+            background: rgba(20, 20, 20, 0.9);
+            color: snow;
+        }
+    }
+    /* CONTENT */
+    @media only screen and (max-width: 800px) {
+        main {
+            top: 60px;
+        }
+    }
+    /* FOOTER */
+    @media only screen and (max-width: 800px) {
+        footer {
+            margin-bottom: 60px;
+            height: 120px;
+            display: grid;
+            -webkit-display: grid;
+            justify-content: space-around;
+        }
+        footer div.fLogo {
+            grid-column: 1;
+            grid-row: 1/3;
+            width: 120px;
+            margin: auto 5px;
+            padding: 0px;
+        }
+        footer div.fText {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        footer div.fContact {
+            grid-column: 2;
+            width: 100%;
+            display: block;
+        }
+        footer div.fContact span.caption {
+            display: none;
+        }
+        footer div.fContact span.links {
+            display: block;
+            width: 100%;
+        }
+        footer div.fContact span.links a {
+            margin: auto;
+            width: 120px;
+            justify-content: space-around;
+            display: inline-block;
+        }
+    }

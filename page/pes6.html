@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://z-p3-scontent.frai2-2.fna.fbcdn.net/v/t1.0-9/105533794_713750522783339_7250861407941256306_o.jpg?_nc_cat=111&_nc_sid=825194&_nc_eui2=AeH6FMUN9BGcp1I4ailytW-RX02_U0EfQO5fTb9TQR9A7lSksFVUT1DdePFjScKIxpHoaGwEZokeMuGSTWcfFRF3&_nc_ohc=AhIQtbtxj6EAX_TkiaX&_nc_ht=z-p3-scontent.frai2-2.fna&oh=287a179c9565c668a6f503d03e4c6a68&oe=5F7F5176">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
-    <link rel="stylesheet" type="text/css" href="pes6/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="pes6.css">
     <script type="text/javascript">
         var version = {
             month: "Novermber",
@@ -29,11 +29,11 @@
             </h1>
         </figure>
         <nav>
-            <a title="Sobre esta versão" target="_self" href="#" onclick="MenuPage(0,0)">About This Version</a>
-            <a title="Atualização" target="_self" href="#" onclick="MenuPage(1,1)">Atualização</a>
-            <a title="Consultar FAQs" target="_self" href="#" onclick="MenuPage(2,2)">FAQs</a>
+            <a title="Sobre esta versão" target="_self" href="#" onclick="page(0,0)">About This Version</a>
+            <a title="Atualização" target="_self" href="#" onclick="page(1,1)">Atualização</a>
+            <a title="Consultar FAQs" target="_self" href="#" onclick="page(2,2)">FAQs</a>
             <div style="float: right;">
-                <a title="Informações sobre registro online (arquivo externo)" href="online.html">Online</a>
+                <a title="Informações sobre registro online (arquivo externo)" href="PES6online.html">Online</a>
             </div>
         </nav>
     </header>
@@ -56,7 +56,9 @@
             <hr width="50%" align="center">
             <div class="g3">
                 <figure id="checkVersion">
-                    <button type="button" hover="button-link" name="VerificarV" onclick="checkVersion()">Verificar Versão Disponível</button>
+                    <button type="button" hover="button-link" name="VerificarV" onclick="this.innerHTML = `<i class='fa fa-refresh fa-spin'></i> Carregando`;setTimeout(checkVersion, 600)">
+                    Verificar Versão Disponível
+                    </button>
                     <img title="Versão Dísponível" align="center" alt="Indisponível" src="" draggable="false" style="opacity: 0;pointer-events: none;">
                     <a title="Saber Mais" href="https://drive.google.com/file/d/10K9mmD0fieUNKEt9oMfajlhnJa23QkhR/view?usp=sharing" style="display: none;">saber mais</a>
                     <figcaption hover="color-out">Check Version</figcaption>
@@ -69,7 +71,7 @@
                 <span class="links">
        	<a href="https://web.facebook.com/groups/easydown.pes6"><i class="fab fa-facebook" style="color: black"></i></a>
        	<a href="javascript:modalBox(1)" title="Saber mais sobre o criador"><i class="fas fa-user" style="color: #e17"></i></a>
-       	<a href="https://easydownloading.000webhostapp.com/index.html" target="_parent"><i class="fas fa-globe-africa" style="color: black"></i></a>
+       	<a href="https://easydownloading.000webhostapp.com/index.html"><i class="fas fa-globe-africa" style="color: black"></i></a>
        </span>
             </div>
         </aside>
@@ -554,6 +556,23 @@
     </div>
 
     <script type="text/javascript">
+        document.getElementById('versionBtn').onclick = function() {
+            var doc1 = document.getElementById('checkVer');
+            var doc2 = document.querySelector('#checkVer img');
+            var doc3 = document.getElementById('versionBtn');
+            var doc4 = document.querySelector('a[name="sabermais"]');
+            if (navigator.onLine == true) {
+                doc1.style.backgroundColor = 'black';
+                doc2.style.display = 'block';
+                doc2.style.opacity = '100%';
+                doc3.style.opacity = '0';
+                doc3.style.cursor = 'default';
+                doc4.style.display = 'block';
+            } else {
+                doc3.innerHTML = 'Você está offline no momento';
+                doc3.style.borderStyle = 'ridge';
+            }
+        }
 
         function modalBox(op) {
             if (op == 1) {
@@ -563,11 +582,11 @@
             }
         }
     </script>
-    <script id="main">
+    <script id="pageReference">
+        var lP = sessionStorage.getItem("Page") || 0;
+        page(lP, lP);
 
-                            MenuPage(0,0);
-
-        function MenuPage(nav, section) {
+        function page(nav, section) {
             var menu = document.querySelectorAll('header nav a');
             var page = document.querySelectorAll('section.content');
             // 
@@ -586,14 +605,13 @@
                 };
                 menu[i].classList.remove('active');
             }
+            sessionStorage.setItem("Page", section);
         }
-
 
         function checkVersion() {
             var checkBtn = document.querySelectorAll('#checkVersion button')[0];
             var checkImg = document.querySelectorAll('#checkVersion img')[0];
             var checkKnow = document.querySelectorAll('#checkVersion a')[0];
-            checkBtn.innerHTML = '<i class="fa fa-refresh fa-spin"></i> Carregando';
             // online?
             if (navigator.onLine == true) {
                 checkImg.src = "https://scontent.frai1-1.fna.fbcdn.net/v/t1.0-9/120195060_783290349162689_7724990534397028117_n.jpg?_nc_cat=111&ccb=2&_nc_sid=730e14&_nc_eui2=AeF-S9HtPV6AxC3tKVK93Z90i0bgFr99RDWLRuAWv31ENYqabSXLmmZxTRhIx2QWIMzr35koxK6DFbVWnnoILS7Z&_nc_ohc=QhCehhZfyjgAX9rhG2W&_nc_ht=scontent.frai1-1.fna&oh=be816b6e038e9e9136025b5bf2290129&oe=5FC576F9"
@@ -604,7 +622,7 @@
                 checkKnow.style.display = 'block';
                 checkKnow.style.zIndex = '1';
             } else {
-                acheckBtn.innerHTML = 'Você está offline no momento';
+                checkBtn.innerHTML = 'Você está offline no momento';
                 checkBtn.style.zIndex = '1';
             }
         }

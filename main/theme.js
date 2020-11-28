@@ -6,14 +6,16 @@ function darkMode(light) {
     var footerM = $('footer');
 
     if (activeMode.innerHTML == "Light Mode") {
+
         activeMode.innerHTML = "Night Mode";
         $(light).css({ 'filter': 'brightness(25%)' })
+        $("#darkmode i").css({'color':'#000'}) //apagado
 
 
 
         $('html').css({'background-color': '#111'});
         homeC.css({
-            'background': '#444',
+            'background': '#ccc',
             'color': 'azure',
         }); //INSIDE FRAMES
 
@@ -23,6 +25,7 @@ function darkMode(light) {
         $('header#mainHeader #menuIcon div').css({ 'background': '#334' });
         $('header#mainHeader #logo').css({ 'color': '#E17', 'animation-duration': '2s' });
         $('header#mainHeader #mainMenu .menu button').css({ 'background': '#ddd', 'color': '#334' });
+        $('header#mainHeader #mainMenu .menu a').css({ 'background': '#ddd', 'color': '#334' });
         $('header#mainHeader #mainMenu').css({ 'background': '#ddd' });
         $('header#mainHeader .menu nav.submenu a').css({ 'background': 'slategray' });
         $('header#mainHeader #social img').css({ 'filter': 'grayscale(0%)' });
@@ -43,6 +46,7 @@ function darkMode(light) {
 
         activeMode.innerHTML = "Light Mode";
         $(light).css({ 'filter': 'brightness(100%)' })
+        $("#darkmode i").css({'color':'#FF0'}) //acesso
 
 
         $('html').css({'background-color': ''});
@@ -58,6 +62,7 @@ function darkMode(light) {
         $('header #menuIcon div').css({ 'background': '' });
         $('header #logo').css({ 'color': '', 'animation-duration': '' });
         $('header #mainMenu .menu button').css({ 'background': '', 'color': '' });
+        $('header #mainMenu .menu a').css({ 'background': '', 'color': '' });
         $('header #mainMenu').css({ 'background': '' });
         $('header .menu nav.submenu a').css({ 'background': '' });
         $('header #social img').css({ 'filter': '' });
