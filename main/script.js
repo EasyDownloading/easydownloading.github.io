@@ -90,8 +90,13 @@ window.onload = function () {
 
   // set head
     var _head = document.getElementsByTagName('head')[0];
+<<<<<<< HEAD
     var _icon = document.createElement("link");_icon.rel="icon";_icon.href="main/icon.jpg";
     _head.appendChild(_icon);
+=======
+    var _body = document.getElementsByTagName('body')[0];
+    var _icon = document.createElement("link");_icon.rel="icon";_icon.href="main/icon.jpg";
+>>>>>>> b2048a5b54a56b5ec698aa1b6b118517917e09bf
     
 
    //set refH
