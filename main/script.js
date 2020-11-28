@@ -91,7 +91,7 @@ window.onload = function () {
   // set head
     var _head = document.getElementsByTagName('head')[0];
     var _body = document.getElementsByTagName('body')[0];
-    var _icon = document.createElement("link");_icon.rel="icon";_icon.href="icon.jpg"
+    var _icon = document.createElement("link");_icon.rel="icon";_icon.href="main/icon.jpg"
     
 
    //set refH
