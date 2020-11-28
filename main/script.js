@@ -53,7 +53,7 @@ var loadSidebar = `
         <div class='fText'> 
             Um mini-projeto desenvolido por <br>
              Eril Tavares ® 2019-2020 EasyDownloading. <br>
-             All rights reserved. 
+             <a href="LICENSE">All rights reserved</a>. 
         </div> 
         <div class='fContact'> 
             <span class='links'> 
@@ -89,9 +89,9 @@ window.onload = function () {
     loadPage(pageID);// setTimeout(loadPage, 100, pageID);
 
   // set head
-    var _head = document.getElementsByTagName('head')[0];
-    var _icon = document.createElement("link");_icon.rel="icon";_icon.href="main/icon.jpg";
-    _head.appendChild(_icon);
+    // var _head = document.getElementsByTagName('head')[0];
+    // var _icon = document.createElement("link");_icon.rel="icon";_icon.href="main/icon.jpg";
+    // _head.appendChild(_icon);
     
 
    //set refH
