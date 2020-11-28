@@ -90,7 +90,6 @@ window.onload = function () {
 
   // set head
     var _head = document.getElementsByTagName('head')[0];
-<<<<<<< HEAD
     var _icon = document.createElement("link");_icon.rel="icon";_icon.href="main/icon.jpg";
     _head.appendChild(_icon);
     
