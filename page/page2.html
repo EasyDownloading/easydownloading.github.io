@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Atualização</title>
+    <style>
+    	body{font-family: monospace;}
+        .topic{text-align: center;text-transform: uppercase;font-family: impact}
+
+section.update div.grouping{display: flex;width: 100%}
+section.update div.grouping article{width: 50%;height: 350px;max-height: 350px;font-size: 0.9em;
+    overflow-x: hidden;white-space: normal;overflow-y: auto;border-radius: 15px;
+    align-items: center;
+}
+article::-webkit-scrollbar{background-color: rgba(0,0,0,0.5);border-radius: 0px 15px 15px 0px; overflow: hidden;}
+article::-webkit-scrollbar-thumb{display: none;}
+section.update article{
+    position: relative; display: block;margin: 10px;
+    padding: 10px;height: auto;max-height: 275px;overflow-y: auto;
+    transition: 0.3s ease-out;
+    border-radius: 15px;
+    border-radius: 0px 15px 15;
+    filter: saturate(25%)
+}
+
+button.download{transition: 0.8s;
+    background-color: #96897f;filter: invert(100%);
+    display: inline-block;position: relative;;
+    margin-left: 15px;padding: 5px;
+    cursor: pointer;border-radius: 0px 10px;
+    outline: none;border: none;
+    font-family: fantasy;font-weight: bold;font-variant: small-caps;
+}button.download:hover{filter: invert(0%);}button.download:focus{filter: drop-shadow(0px 0px 2px black) sepia(100%);}
+
+.mark{text-decoration: underline; text-decoration-color: rgba(0,0,0,0.2);}
+.mark:hover{text-decoration: underline; text-decoration-color: rgba(0,0,0,0.6); font-weight: bold; cursor: context-menu;}
+.hideMore{display: none}
+    </style>
+</head>
+<body>
+    <section class="content update">
+        <h2 class="topic">
+            <font anim="blink" face="impact">&#128211;<br></font>
+            ATUALIZAÇÃO
+        </h2>
+        <div class="grouping">
+            <article id="updater_exe" hover="box-content">
+                <h3>
+                    <li style="list-style-type: none; font-variant: small-caps;">&#128229; Atualizar Updater</li>
+                </h3>
+                <p class="superinfo" style="font-family: cursive;">Atualizar o programa de atualização...</p>
+                <div>
+                    É essencial que antes de fazer uma atualização, pelo programa de atualização que você tem atualmente, você baixe uma versão do programa mais recente. <br>
+                    <input type="button" name="more" value="ler mais" onclick="document.getElementsByClassName('hideMore')[0].style.display='block';this.style.display = 'none'">
+                    <p class="hideMore">É possivel que, <em>sim</em>, o programa que você tem instalado pode fazer a atualização corretamente, mas levando em conta que podemos melhorar as configurações de como as atualizações são feitas, de adicionarmos novos <i class="mark"
+                            title="feramentas que ajudam você a maneijar os arquivos do jogo">tools</i>, e mais funcionalidades úteis.</p>
+
+                </div><br>
+                <a href="https://drive.google.com/file/d/14Hjn_Vgw9lSbiOMpa3sKnLI7SNulaZ9u/view?usp=sharing" target="_parent" style="text-decoration: none;">
+                    <button class="download" type="button" title="Link para o Google Drive [< 4Mb]"><i class="fas fa-download">&#20;</i>EasyDown pes6 Updater.exe</button> </a>
+            </article>
+
+            <article class="dat" hover="box-content">
+                <h3>
+                    <li style="list-style-type: none; font-variant: small-caps;">&#128230; e_text</li>
+                </h3>
+                <p class="superinfo" style="font-family: cursive;">Baixar arquivo <b>e_text.afs</b> para pasta <b>dat</b> do jogo...</p><br>
+                <div>
+                    O arquivo e_text.afs é um componete necessario para o funcionamento do patch <i class="mark" title="easydownloading">ED</i>.<br> este arquivo permite ao jogo habilitar o idioma <i class="mark" lang="English" translate="Inglês"
+                        title="in-game text: English">English</i>, juntamente com o arquivo <i class="mark" title="para comentário">e_sound</i>. Mas não necessariamente. <br> Esse arquivo faz com que o nosso patch funcione bem e devidamente, então se
+                    não o tiver, baixe um deles aqui...
+                    <p class="hideMore">• No primeiro Link temos o <b>e_text.afs Original</b>, ou seja sem nenhuma alteração, o padrão do jogo.<br> Esse arquivo serve para evitar completamente os erros de compatibilidade dos arquivos do kitserver. Porém isso não é muito
+                        relevante se o espaço de reversa do arquivo for suficiente. consulte o
+                        <a href="page3.html">FAQ</a><br><br>• No segundo Link temos o <b>e_text.afs do EasyDownloading</b> da versão disponível. <br><mark>Baixar esse arquivo é o mesmo que melhorar o funcionamento do Patch e evitar diversos bug </mark>
+                        <sup title="Não esqueça de fazer o backup da pasta '..\kitserver\EASYDOWN\e_text.afs'" style="cursor: pointer;text-decoration: underline;">Atenção</sup><br>Mas caso isso não vier a acontecer, use o e_text.afs original e reponha
+                        a pasta e_text.afs.
+                    </p><br><input type="button" name="more" value="ler mais" onclick="document.getElementsByClassName('hideMore')[1].style.display='block';this.style.display = 'none'">
+
+
+                </div><br>
+                <a href="https://drive.google.com/file/d/1IB2K8znr23ni40oovtaNntpgxDD3dYN3/view?usp=sharing" target="_parent" style="text-decoration: none;">
+                    <button class="download" type="button" title="Link para o Google Drive [24.8Mb]"><i class="fas fa-download">&#20;</i></i>Original e_text.afs</button>
+                </a>
+                <a href="https://drive.google.com/file/d/12HlneKfTjOMuV7_OtkcGIaQYWyRm-j2e/view?usp=sharing" target="_parent" style="text-decoration: none;">
+                    <button class="download" type="button" title="Link para o Google Drive [< 30Mb]"><i class="fas fa-download">&#20;</i>ED e_text.afs</button>
+                </a>
+            </article>
+        </div>
+        <div class="likkearticle">
+            <hr width="50%">
+            <h4 align="center"><i class="fas fa-download"></i><br>Pack Downloads</h4>
+        </div>
+
+        <article class="Soundtracks" hover="box-content">
+            <h3>
+                <li style="list-style-type: none; font-variant: small-caps;">&#127926; Soundtracks</li>
+            </h3>
+            <p class="superinfo" style="font-family: cursive;">Baixar e adicionar as músicas de fundo ...</p><br>
+            <div>
+                * Esses soundtracks são musicas de fundo que são ouvidas no museu do jogo...<br> * Você pode encontrar os nomes da musica no museu do jogo <br> * Para adicionar a lista de soundtracks do jogo clique no botão de download abaixo.<br>                    * quando tiver baixado o arquivo abra o programa Install.bat e pronto... <br>
+                <p class="hideMore">Esses soundtracks são apenas da lista de musicas no museu (15 musicas)...<br>Pode ser que esses soundtracks dê um bug no jogo, porque seu arquivo 0_sound é rippado, neste caso evite instalar os soundtracks. Caso tiver passando por
+                    este bug, remova a <ins title="..\kitserver\EASYDOWN\0_sound.afs">pasta</ins> <em><b>0_sound.afs</b></em> dentro da pasta <em>EASYDOWN</em> que se encontra dentro da pasta do <em>kitserver</em> do jogo
+                    <marque>(Ou seja, remover todos os Soundtracks adicionados!).</marque>
+                </p><input type="button" name="more" value="ler mais" onclick="document.getElementsByClassName('hideMore')[2].style.display='block';this.style.display = 'none'">
+
+
+            </div><br>
+            <a href="https://drive.google.com/file/d/1Tl1_vJ9JX1WMrNlg59d7OD8UolRq0poX/view?usp=sharing" target="_parent" style="text-decoration: none;">
+            <button class="download" type="button" title="Link para o Google Drive [> 50Mb]"><i class="fas fa-download">&#20;</i>Soundtracks Pack.zip</button>
+        </a>
+        </article>
+        <article class="gbd" hover="box-content">
+            <h3>
+                <li style="list-style-type: none; font-variant: small-caps;">&#128085; Kits</li>
+            </h3>
+            <p class="superinfo" style="font-family: cursive;">Baixar e adicionar uniformes...</p><br>
+            <div>
+                Decidimos não adicionarmos muitos <i class="mark" title="Uniformes da equipas, pelo GBD">kits</i> nos <i class="mark" title="O arquivo que é baixado quando você faz uma atualização através do programa">arquivos de atualização</i>,
+                porquê o tamanho do arquivo de download ultrapassaria 90mb.<br> Por isso decidimos fazer o upload dos kits separados e você pode baixá-lo e instalar Manualmente<br>
+                <p class="hideMore"></p>Para baixar clique no clink de Download abaixo e após o download abra o arquivo <i class="mark" title="Programa de linhas de comando do CMD, que vai ajudar a fazer a instalação dos kits na pasta uni do GBD">Install.bat</i><br>Em
+                poucos casos os kits causam um bug no jogo, veja os <i class="mark faqcall" title="Frequent Answers and Questions">FAQs</i> sobre isso.
+                </p><input type="button" name="more" value="ler mais" onclick="document.getElementsByClassName('hideMore')[3].style.display='block';this.style.display = 'none'">
+
+
+            </div><br>
+            <a href="https://drive.google.com/file/d/1hMxeHDY4lM5oBZ3wD3g2KqyGpyfpucRF/view?usp=sharing" target="_parent" style="text-decoration: none;">
+                <button class="download" type="button" title="Link para o Google Drive [> 50Mb]">Kits Pack.zip</button>
+            </a>
+        </article>
+        <article class="gbd" hover="box-content">
+            <h3>
+                <li style="list-style-type: none; font-variant: small-caps;">&#127967; Estádios</li>
+            </h3>
+            <p class="superinfo" style="font-family: cursive;">Baixar e adicionar Estádios...</p><br>
+            <div>
+                Oferecemos ao menos 1 estádio em cada atualização. Provavelmente porque chegaríamos no limite de tamanhos dos arquivos. <br> Em cada atualização 1 estádio ou 2 podem ser baixados no link abaixo... Ao fazer o download desses estádio,
+                eles ficarão permanentemente disponível pro seu <i class="mark" title="na pasta ..\kitserver\GBD\stadium">jogo</i>. <br>
+
+                <p class="hideMore">Com isso, você pode fazer as proximas atualizzações sem perder os estádios, a não ser que VOCÊ os remova. <br>
+                </p><input type="button" name="more" value="ler mais" onclick="document.getElementsByClassName('hideMore')[4].style.display='block';this.style.display = 'none'">
+
+
+            </div><br>
+            <a href="https://drive.google.com/file/d/11KhGEdcPvX1y8C3y7AUSKWAnaiOc3NQm/view?usp=sharing" target="_parent" style="text-decoration: none;">
+            <button class="download" type="button" title="Link para o Google Drive [> 50Mb]">Stadiums.zip</button>
+        </a>
+        </article>
+
+    </section>
+    <style>
+        
+[hover="float-up"]:hover{transform: translate(0px,-2px);transition:  0.6s cubic-bezier(0.6,0.5,0,2.5);}
+[hover~="hover-top"]:hover{transition: 0.3s cubic-bezier(.27,1.01,.41,1.3);opacity: 1;cursor: pointer;vertical-align: text-top;align-items: stretch;color: white}
+[hover~="hover-top"]:hover:after{content: "top";font-size: 2vh;position: absolute;bottom: 1px;opacity: 0.7;text-overflow: ellipsis;text-transform: lowercase;font-family: arial}
+[hover~="hover-top"]:active{transform: scale(0.9) translateY(5px) rotateX(45deg);transition: 0.1s}
+
+[animation~="click-n-rotate-y"]:active{animation: 3s click-n-rotate-y ease-out 0.5s alternate 4;transition: 0.4s ease-in;cursor: default;user-select: none;}
+@keyframes click-n-rotate-y {from{transform: rotateY(360deg) scale(1);opacity: 0.9}to{transform: rotateY(0deg);opacity: 0.5}}
+[animation~="click-n-rotate-x"]:active{animation: 3s click-n-rotate-x ease-out 0.5s alternate 4;transition: 0.4s ease-in;cursor: default;user-select: none;}
+@keyframes click-n-rotate-x {from{transform: rotateX(360deg) scale(1);opacity: 0.9}to{transform: rotateX(0deg);opacity: 0.5}}
+
+[hover~="box-content"]:hover{box-shadow: 0px 0px 4px black;border-radius: 15px;filter: saturate(100%); transition: 0.4s}
+[hover~="color-out"]:hover{transition: 1s cubic-bezier(0,0.9,1,0.9);filter: invert(100%);cursor: default;}
+[hover~="color-in"]:hover{transition: 1s cubic-bezier(0,0.9,1,0.9);filter: sepia(100%);cursor: default;}
+[hover~="button-link"]:hover{transition: 0.3s ease-out;filter: hue-rotate(110deg);transform: scale(1.05);}
+[hover~="button-link"]:focus{transition: 0.3s ease-in;transform: scale(1);}
+[anim~="blink"]{animation: 1s blink ease-in-out 0.5s alternate infinite;}@keyframes blink {from{opacity: 1}to{opacity: 0.25}}
+    </style>
+</body>
+</html>

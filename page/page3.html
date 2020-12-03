@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>FAQ</title>
+    <style>
+    	body{font-family: monospace;}
+        section.faq{position: relative;}
+        .topic-content{background-color: azure}
+section.faq nav#topics{position: relative;display: block;padding: 0;margin: 2px 0;}
+section.faq nav input{position: sticky;display: block; padding: 15px;width: 100%;height: 100%;background-color: #555;color: snow;
+    font-variant: small-caps;letter-spacing: 1px;font-size: 150%;border: none;outline:none;border-radius: 6px;box-shadow: 0px 0px 3px black;transition: 0.2s ease;
+}nav#topics div.topic{position: absolute;width: 100%;left: 0;top: 100%;display: flex;transition: 0.4s ease;
+    justify-content: center;align-items: center;flex-direction: column;box-shadow: 0px 1px 2px black;background-color: #ccc;
+}div.topic span button{width: 100%;border:none;outline: none;z-index: 10;
+    padding: 10px;background-color: #ccc;font-family: 'comic Sans MS';
+}div.topic span{width: 100%;position: relative;}
+.topic span label{position: absolute;top: 0;left: 20px;pointer-events: none;font-family: fantasy;font-size: 100%;opacity: 50%;
+}div.topic span button:not([disabled]):hover{background-color: #bbb;cursor: pointer;}div.topic button:focus{background-color: #777;color: #ddd}
+nav#topics div.topic{max-height: 0px;padding: 0;overflow: hidden; transition: 0.4s ease}
+nav#topics input:focus + div.topic{max-height: 10000px;overflow: auto;}
+section.faq nav input:focus{border-radius: 6px 6px 0px 0px;background-color: #51575f}
+
+section.faq div.topic-content{position: relative;background-color: none;padding: 20px 10px 10px;border-radius: 6px 6px 16px;}
+    </style>
+</head>
+<body>
+    <section class="content faq" style="min-height: 400px">
+
+        <nav id="topics" name="topics"><input type="button" id="faq-topic-title" name="faq-topic" value="FAQ">
+            <div class="topic" hover="child-selcetion" style="z-index: 1">
+                <span style="order: 1"><label></label>
+          <button onclick="faq(0)">Passos sobre a atualização</button>
+      <button onclick="faq(1)">O que acontece com os meus dados do jogo?</button>
+          </span>
+                <span style="order: 2"><label>Bugs</label>
+     <button onclick="faq(2)">Bug do Soundtracks</button>
+     <button onclick="faq(3)">Bug dos Kits</button>
+     <button onclick="faq(4)">Bug: Jogo não inicia</button>
+         </span>
+                <span style="order: 3"><label>Tools</label>
+      <button onclick="faq(5)">Tools: como usar?</button>
+      <button onclick="faq(6)">Tools: como funcionam?</button>
+          </span>
+                <span style="order: 4"><label>Advanced</label>
+      <button onclick="faq(7)">Configurações Avançadas</button>
+            </span>
+            </div>
+        </nav>
+
+
+        <!-- topic -->
+        <div class="topic-content">
+            <article name="tpc-welcoming">
+                <p align="center">Welcome to FAQs</p>
+            </article>
+
+            <article class="tpc-content" style="display: none">
+                Durante a atualização são efetuados seguintes passos para o comprimento de uma atualização bem-sucedida:
+                <ul>
+                    <li>Obter o diretório do Jogo!</li>
+                    <dd>Este passo é importantíssimo, pois se você não selecionar o diretório do Jogo, nada funcionara. <br>Além disso, é preciso que na pasta do jogo Haja o Kitserver Instalado, caso não existir será criado pelo Atualizador</dd>
+                    <li>Estar Conectado à Internet</li>
+                    <dd>Pode até parecer Suspeito, mas não, O atualizador baixa o arquivo, que contem todo o update do jogo, automaticamente através do <i>GoogleDrive</i>. Mas para isso você precisa estar conectado à Internet. <mark>Nada além disso é baixado, em caso de dúvidas envie-nos um e-mail</mark></dd>
+                    <li>O arquivo Baixado:</li>
+                    <dd>O arquivo baixado é extraído e mantido em uma pasta temporária, este arquivo é excluído após a atualização estar completa, e dele só é mantido o Option File <sup>como backup para o caso de você querer reinstalar tools</sup></dd>
+                    <dd>A primeira informação na tela de atualização é a Informação sobre a versão baixada. E essas informações são guardadas após a conclusão da atualização</dd>
+                    <li>Durante A Atualização</li>
+                    <dd><q>Porquê não podia simplesmente baixar o arquivo e disponibilizar para instalação manual?></q><br>- Bem, Não são apenas Arquivos para o Kitserver que foram comprimidos, muito arquivos são pendentes para a atualização e Todo cuidado
+                        é tomado durante ela. <br>- Isso para facilitar a Atualização e para não complicar as coisas para você. <br> Todo o relatório é passado na tela durante a Instalação dos arquivos.</dd>
+                    <li>No Final</li>
+                    <dd>À Conclusão da atualização são feitas algumas configurações: •Guardar Informações na versão e de quando a atualização foi feita; • Registrar o installdir do jogo; • Fazer backup dos arwuivos alterados, como OPT, Kload, e outras
+                        configurações do kitserver</dd>
+                    <li><q>O que faço com o atualizador agora?</q></li>
+                    <dd>uma questão bem engraçada não acha?! <br> Recomendamos que vc abra o atualizador novamente e explore outras opções como o <abbr title="ferramentas">Tools</abbr>, e o <abbr title="Incrivelmente, este arquivo html">AboutVersion</abbr><br>-
+                        <mark>Deixe-o guardado porque você ainda pode usá-lo para fazer a Próxima Atualização</mark>. Porém pode haver uma versão recente deste atualizador. saiba mais <a href="page2.html#updater_exe">aqui</a>. Neste caso ao
+                        fazer uma atualização baixe uma versão recente antes!</dd>
+                </ul>
+            </article>
+            <article class="tpc-content" style="display: none">
+                <p>Antes de tudo, antes de fazer uma atualização a atualizador guarda algumas informações, essas são:<br> <i>O diretório do Jogo, do Kitserver, 
+            da pasta KONAMI em documentos, e da pasta downloads (necessário para a atualização.)</i><br> então, nada é alterado antes de concluir uma atualização.
+                </p>
+                <div>
+                    <h4>Porém após fazer uma Atualização, Os arquivos relevantes são alterado durante o processo:</h4>
+                    <ul>
+                        <li>Configurações dos Módulos do Kitserver (Gameplay)</li>
+                        <dd>Estes são os arquivos <abbr title="configuration file of .dll module">.cfg</abbr> dentro da pasta kitserver (<abbr title="Aletrar a velocidade geral do Jogo">speeder.cfg</abbr>, <abbr title="Alterar a camera do jogo. Use Panorâmica/wide">camerazoomer.cfg</abbr>,
+                            <abbr title="A raíz do Kitserver, por assim dizer, em alguns casos é necessário fazer algumas alterações em caso do Jogo parar de funcionar de repente.">kload.cfg</abbr> (apenas uma vez, para adicionar o fullscreen HD mode)
+                            e outros, <abbr title="Configurações sobre os níveis de detalhe dos jogadores e das configurações gerais do jogo">loadmixer.dat</abbr>)</dd><br>
+                        <dd>Antes desses arquivos serem atualizados, é feito um backup antes... saiba mais em <a href="javascript:tit(6)" title="Tools: Como funcionam">tools</a></dd>
+                        <li>Arquivos do patch para Kitserver (0_text, e_text).afs</li>
+                        <dd>Esses arquivos são adicionados <mark style="background-color:skyblue">na pasta EASYDOWN</mark>, não substituem nada. <mark>Porém os arquivos que estavam lá são, <span style="font-style: oblique;">primeiramente, renomeados</span> e só depois da atualização ser completa: apagados!</mark></dd>
+                        <dd>Resumindo, estes arquivos não afetam nada os seus dados</dd>
+                        <li>Executável do Jogo (pes6.exe)</li>
+                        <dd>Após concluir a instalação dos arquivos do kitserver, é hora de atualizar o executável do Jogo (pes6.exe)<br>Então, para fazer isso é feito um backup antes na própria pasta do jogo, e o executável que <ins>foi</ins> atualizado
+                            passará a ter o nome de: <mark>Original~pes6.exe</mark>.</dd>
+                        <dd>Caso quiser usá-lo, delete o pes6.exe e renomeie o arquivo original~pes6.exe para pes6.exe</dd>
+                        <li>Option File (KONAMI-WIN32PES6OPT)</li>
+                        <dd>De seguida o OptionFile, Muito Relevante, talvez o mais importante. <br> O Optionfile é automaticamente atualizado. Mas, como sempre, é feita um backup antes, tanto o que lá foi encontrado antes como o da atualização.</dd>
+                        <dd>O teu OptionFile passará a ter o nome <mark>original~KONAMI-WIN32PES6OPT</mark> que será movido para a pasta backup dentro do <abbr title="../Meus Documentos/KONAMI/Pro Evolution Soccer 6/save/folder1">folder1</abbr> para restaurar
+                            use o <a href="javascript:tit(6)">tools</a> para restaurar o OPT de backup. <br> Caso queira fazer isso manualmente, vá em <abbr title="../Meus Documentos/KONAMI/Pro Evolution Soccer 6/save/folder1">folder1</abbr> e na
+                            pasta backup renomeio o arquivo <i>original~KONAMI-WIN32PES6OPT</i> para <b>KONAMI-WIN32PES6OPT</b> e depois mova-o para pasta folder1 e substitua o arquivo que estiver lá</dd>
+                        <li>Online (hosts)</li>
+                        <dd>Com a opção de Instalação Opcional, a instalação do hosts Online funcionam da seguinte forma:</dd><br>
+                        <dd>Primeiro, Faz-se um backup 'diferenciado' do hosts encontrado durante a atualização na pasta <abbr title="C:\Windows\System32\drives\etc.." style="color: green">etc</abbr>. O backup funciona da seguinte forma: <br>-Para a primeira
+                            atualização o arquivo hosts lá encontrado é renomeado para <mark>original~hosts</mark> e pronto. Porém se lá for encontrado um arquivo com o nome <i>original~hosts</i> o backup não é feito. <br> <q>Mas porquê?</q> <br>                                Isso para poder Evitar que o arquivo hosts, <ins>original</ins> do usuário lá encontrado, não seja afetado. Com isso você pode assim não se preocupar com o seu arquivo hosts</dd><br>
+                        <dd>Segundo, Muda-se o <abbr title="code do jogo registrado no regedit">Serial</abbr> do jogo para ser compatível com o do registo Online. <br><b>não há como restaurar esse code!</b>
+                            <p>nada além desses ítems é alterado!</p>
+                        </dd>
+                        <li>InstallDir (REGEDIT)</li>
+                        <dd>Muda o directório do jogo no registo para a pasta ode o jogo se encontra... Isso é muito eficaz e necessário. se você é um daqueles que tem várias cópias do jogo espalhados pelo computador, certamente não terá problema para
+                            iniciar o jogo no diretório correto do update!</dd>
+                    </ul>
+                    <br>
+                </div>
+        </div>
+        </article>
+        <article class="tpc-content" style="display: none;">
+            <span class="atention">Atenção!</span>
+            <p>Ao usar os Soundtracks, o jogo pode buggar completamente... <q>como assim?</q>:</p>
+            <ul>
+                <li>O seu <abbr title="../dat/0_sound.afs">arquivo</abbr> 0_sound.afs é ripado?</li>
+                <dd>Levando em conta que você não sabe, vamos lhe ajudar: <br>-O arquivo 0_sound.afs possui um tamanho de aproximadamente 24.8Mb, O mesmo que o do e_text.afs?<br> Nesse caso, sim, o seu 0_sound.afs é ripado, <i>provavelmente seja, porque encontrar o arquivo 0_sound.afs original do jogo ta dificil rss</i></dd>
+                <p>Então, O que fazer? bem, não podemos garantir que o jogo vá buggar, mas é bem provável. Se você estiver usando um 0_sound.afs de outro patch ou o seu mesmo (editado por você), talvez seja possível o pack de soundtracks funcionar de
+                    boa
+                </p>
+                <li><q>Oq fazer?</q></li>
+                <dd>Bem se você não entendeu que nessas condições é melhor não Instalar os Soundtracks. Vamos dar à você uma solução:</dd>
+                <dd>
+                    <p>Vamos instruir você a adicionar os Soundtracks dentro do arquivo 0_sound.afs... sim, dessa forma não haverá nenhum bug, ou erro! <abbr title="Se você não entendeu bem, e quer uma explicação mais detalhada, clique no link no final do tut~">nota</abbr>                            </p>
+                    <b style="display: block;">1˚ Passo</b>
+                    <div>Baixe o DKZ Studio <br> aproveite e descompacte o arquivo 'Soundtrack pack.zip'</div>
+                    <b style="display: block;">2˚ Passo</b>
+                    <div>abra o arquivo <abbr title="../dat/0_sound.afs">0_sound.afs</abbr> no DKZ Studio</div>
+                    <b style="display: block;">3˚ Passo</b>
+                    <div>Veja os nomes dos arquivos do Soundtracks na pasta <abbr style="color:blue" title="Na PASTA do arquivo descomprimido 'Soundtracks pack.zip'">0_sound.afs</abbr> e, <i>dentro do DKZ com o Arqivo aberto</i> renomeie as extenções dos
+                        arquivo para unknow_xxx.
+                        <font color="red">adx</font>
+                    </div>
+                    <b style="display: block;">Por último</b>
+                    <div>Faça o passo anterior com todos os arquivos que têm o mesmo nome que os arquivo da PASTA 0_sound.afs <br> Então, no DKZ vá no <abbr title="Edición - Importar - Importar Todos Los Archivos">menu » Edição » Importar » Importar todos os arquivos</abbr>                            e selecione a PASTA do 0_sound.afs extraído do arquivo 'Soundtracks pack.zip'</div>
+                    <h6>caso não ficou esclarecido siga o tutorial <a href="javascript:void(0)">aqui</a></h6>
+                </dd>
+            </ul>
+        </article>
+        <article class="tpc-content" style="display: none">
+            <mark>Indisponível 4</mark>
+        </article>
+        <article class="tpc-content" style="display: none">
+            <mark>Indisponível 5</mark>
+        </article>
+        <article class="tpc-content" style="display: none">
+            <mark>Indisponível 6</mark>
+        </article>
+        <article class="tpc-content" style="display: none">
+            <mark>Indisponível 7</mark>
+        </article>
+        <article class="tpc-content" style="display: none">
+            <mark>Indisponível 8</mark>
+        </article>
+
+        </div>
+
+    </section>
+    <script>
+        function faq(topic) {
+            var nav = document.getElementById('faq-topic-title');
+            var _title = document.querySelectorAll('div.topic button');
+            var article = document.getElementsByClassName('tpc-content');
+            document.getElementsByName('tpc-welcoming')[0].hidden = true;
+            nav.value = _title[topic].innerHTML;
+            _title[topic].disabled = true;
+            article[topic].style.display = 'block';
+            // 
+            for (var i = 0; i < article.length; i++) {
+                if (i == topic) {
+                    continue
+                }
+                article[i].style.display = 'none';
+                _title[i].disabled = false;
+            }
+
+        }
+    </script>
+</body>
+</html>
