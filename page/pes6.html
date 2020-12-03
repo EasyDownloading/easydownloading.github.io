@@ -220,7 +220,7 @@
         }
     </script>
     <script id="pageReference">
-        var pH = sessionStorage.getItem("PgHgt");
+        var pH = sessionStorage.getItem("PgHgt") || '1250px';
         var lN = sessionStorage.getItem("MeNu") || 0;
         var lP = sessionStorage.getItem("PaGe") || 'page1.html';
         page(lN, lP, pH);
